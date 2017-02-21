@@ -1,4 +1,4 @@
-# Cousera - Inferential Statistics with R
+# Coursera - Inferential Statistics with R
 
 This repository contains activities and lectures notes from the Coursera [Inferential Statistics](https://www.coursera.org/learn/inferential-statistics-intro#) course, which is part oh the
 [Statistic with R](https://www.coursera.org/specializations/statistics) specialization.
