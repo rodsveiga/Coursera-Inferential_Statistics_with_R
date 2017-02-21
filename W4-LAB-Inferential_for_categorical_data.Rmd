@@ -7,7 +7,7 @@ Here are my answers to the Week 4 Lab Activity of the couse __Inferential Statis
 
 ## R Markdown
 
-This is a R Markdown file. To a better viewing, it could be forked and knitted on RStudio to a html file or it could be viewed directly as a [RPubs publication](http://rpubs.com/rodsveiga/252170). 
+This is a R Markdown file. To a better viewing, it could be forked and knitted on [RStudio](https://www.rstudio.com/) to a html file or it could be viewed directly as a [RPubs publication](http://rpubs.com/rodsveiga/252170). 
 
 ## Packages
 
