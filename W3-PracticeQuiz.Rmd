@@ -1,0 +1,152 @@
+---
+title: "Week 3 Practice Quiz"
+output: statsr:::statswithr_lab
+---
+
+Here are my answers to the Week 3 Practice Quiz Activity of the couse __Inferential Statistics with R__ presented by Coursera and conducted by Mine Çetinkaya-Rundel.
+
+## R Markdown
+
+This is a R Markdown file. To a better viewing, it could be forked and knitted on [RStudio](https://www.rstudio.com/) to a html file or it could be viewed directly as a [RPubs publication](http://rpubs.com/rodsveiga/252499). 
+
+## Packages
+
+We will use the `devtools` package to install the `statsr` package associated with this course. We need to install and load this package.
+
+```{r, eval=FALSE}
+install.packages("devtools")
+library(devtools)
+
+```
+
+Now we can install the rest of the packages we will use during the course. Type the following commands in the Console as well:
+
+```{r, eval=FALSE}
+install.packages("dplyr")
+install.packages("ggplot2")
+install.packages("shiny")
+install_github("StatsWithR/statsr")
+
+```
+
+1. Consider the width of two bootstrap confidence intervals constructed based on the same sample. One of the intervals is constructed at a 90% confidence level and the other is constructed at a 95% confidence level. Which of the following is true?
+<ol>
+<li> The 95% interval is wider.</li>
+<li> The intervals are the same size. </li>
+<li> The 90% interval is wider. </li>
+<li> There is not enough information to determine which interval is wider. </li>
+The 95% interval is wider.
+</ol>
+
+Construct bootstrap confidence intervals using one of the following methods:
+
+- Percentile method: XX% confidence level is the middle XX% of the bootstrap distribution.
+- Standard error method: If the standard error of the bootstrap distribution is known, and the distribution is nearly normal, the bootstrap interval can also be calculated as $\bar{x}_{boot} \pm z^{*} SE_{boot}$.
+
+Recognize that when the bootstrap distribution is extremely skewed and sparse, the bootstrap confidence interval may not be appropriate.
+
+Since the intervals are based on the same sample we know that the 95% interval will be wider, leaving out only 5% of samples whereas the 90% interval leaves out 10% of samples.
+
+2. Which of the following is not a situation where the paired test is preferred?
+<ol>
+<li> Compare artery thicknesses at the beginning of a study and after 2 years of taking Vitamin E. </li>
+<li> Assess effectiveness of a diet regimen by comparing the before and after weights of subjects. </li>
+<li> Compare pre- (beginning of semester) and post-test (end of semester) scores of students. </li>
+<li> Assess gender-related salary gap by comparing salaries of randomly sampled men and women. </li>
+The paired test is not preferred to Assess gender-related salary gap by comparing salaries of randomly sampled men and women.
+</ol>
+
+This question refers to the following:
+
+- Define observations as paired if each observation in one dataset has a special correspondence or connection with exactly one observation in the other data set.
+- Carry out inference for paired data by first subtracting the paired observations from each other, and then treating the set of differences as a new numerical variable on which to do inference (such as a confidence interval or hypothesis test for the average difference).
+
+Since the subjects were sampled randomly, each observation in the men's group does not have a special correspondence with exactly one observation in the other (women's) group.
+
+3. You've just read a study that investigated the difference in brain sizes between EU and US citizens, based on data from random samples from both populations. At the 5% significance level the study failed to reject the null hypothesis that EU and US citizens have (on average) brains of equal size. Which of the following is true regarding a 99% confidence interval for the difference in brain sizes?
+<ol>
+<li> Since the data come from samples and not populations, no conclusions can be made.</li>
+<li> The interval does not contain 0.</li>
+<li> Without more information, it is impossible to know whether the interval contains 0.</li>
+<li> The interval contains 0.</li>
+The interval does contain zero.
+</ol>
+
+This question refers to the following:
+
+- Recognize that a good interpretation of a confidence interval for the difference between two parameters includes a comparative statement (mentioning which group has the larger parameter).
+- Recognize that a confidence interval for the difference between two parameters that doesn't include 0 is in agreement with a hypothesis test where the null hypothesis that sets the two parameters equal to each other is rejected.
+
+Because the study failed to reject the null at the 5% significance level, 0 is in the 95% confidence interval for the difference. Consequently, since a 99% interval is even wider, 0 will certainly be in the 99% interval too.
+
+4. The figure below shows three unimodal and symmetric curves, which assignment is most plausible? 
+<ol>
+<li> Solid: normal. Dashed: $t_{df=5}$. Dotted: $t_{df=1}$.</li>
+<li> Solid: normal. Dashed: $t_{df=1}$. Dotted: $t_{df=5}$.</li>
+<li> Solid: $t_{df=1}$. Dashed: $t_{df=5}$. Dotted: normal.</li>
+<li> Solid: $t_{df=5}$. Dashed: $t_{df=1}$. Dotted: normal.</li>
+The solid curce is normal, while and dashed and dotted are t-distributions with $t_{df=5}$ and $t_{df=1}$, respectively.
+</ol>
+
+This question refers to the following:
+
+- Describe how the t-distribution is different from the normal distribution, and what ``heavy tail" means in this context.
+- Note that the t-distribution has a single parameter, degrees of freedom, and as the degrees of freedom increases this distribution approaches the normal distribution.
+
+As the degrees of freedom increases the t distribution starts approaching the normal distribution, and t distributions with lower degrees of freedom will have heavier tails than t distributions with higher degrees of freedom.
+
+5. We are testing the following hypotheses: $H_{0}: \mu = 3$, $H_{A}: \mu >3$. The sample size is 18 and the test statistic is calculated as T = 0.5. What is the p-value
+<ol>
+<li> between 0.01 and 0.025 </li>
+<li> less than 0.01 </li>
+<li> greater than 0.1 </li>
+<li> between 0.05 and 0.1 </li>
+<li> less than 0.005 </li>
+The p-value is greater than 0.1.
+</ol>
+
+```{r pvalue-q5}
+pt(0.5, df = 18 - 1, lower.tail = FALSE)
+```
+
+
+6. What does ANOVA mean?
+<ol>
+<li> Assessment of null observed variability </li>
+<li> Assessment of orthogonal variation </li>
+<li> Analysis of variance </li>
+<li> Aardvarks not over vanilla ants </li>
+ANOVA meas analysis of variance.
+</ol>
+
+Analysis of variance (ANOVA) is defined as a statistical inference method that is used to determine - by simultaneously considering many groups at once - if the variability in the sample means is so large that it seems unlikely to be from chance alone.
+
+7. Which of the following is not a condition required for comparing means across multiple groups using ANOVA?
+<ol>
+<li> The means of each group should be roughly equal.</li>
+<li> The data within each group should be nearly normal. </li>
+<li> The observations should be independent within and across groups.</li>
+<li> The variability across the groups should be about equal. </li>
+The means of each group are not required to be roughtly equal.
+</ol>
+
+Listing the conditions necessary for performing ANOVA:
+
+- the observations should be independent within and across groups,
+- the data within each group are nearly normal,
+- the variability across the groups is about equal.
+
+Whether the means of each group are equal or not is what the ANOVA tests for, so equality of the means is not a required condition for ANOVA.
+
+8. Which of the following looks most like an F distribution?
+<ol>
+<li> T distribution. </li>
+<li> F distribution </li>
+<li> Normal distribution. </li>
+<li> Another one. </li>
+The first one looks like most an F distribution.
+</ol>
+
+Recognize that the test statistic for ANOVA, the F statistic, is calculated as the ratio of the mean square between groups (MSG, variability between groups) and mean square error (MSE, variability within errors).
+
+Also recognize that the F statistic has a right skewed distribution with two different measures of degrees of freedom: one for the numerator ($df_G = k-1$, where $k$ is the number of groups), and one for the denominator ($df_E = n-k$, where $n$ is the total sample size).
