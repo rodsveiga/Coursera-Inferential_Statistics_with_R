@@ -1,6 +1,6 @@
 # Coursera - Inferential Statistics with R
 
-This repository contains activities and lectures notes from the Coursera [Inferential Statistics](https://www.coursera.org/learn/inferential-statistics-intro#) course, which is part oh the
+This repository contains activities and lectures notes from the Coursera [Inferential Statistics](https://www.coursera.org/learn/inferential-statistics-intro#) course, which is part of the
 [Statistics with R](https://www.coursera.org/specializations/statistics) specialization.
 
 The course was developed by Duke University and was conducted by Mine Çetinkaya-Rundel. It might be useful to follow it with the 
